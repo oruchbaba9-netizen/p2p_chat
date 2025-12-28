@@ -1,0 +1,398 @@
+/* ================================================
+   IMO-STYLE SIDEBAR UI ENHANCEMENTS
+   Modern, clean interface inspired by IMO Messenger
+   ================================================ */
+
+/* Sidebar Container - IMO Style */
+#sidebar {
+    width: 360px;
+    background: #ffffff;
+    border-right: 1px solid #e4e6eb;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Sidebar Header - Compact IMO Style */
+.sidebar-header {
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+/* Profile Mini - Compact IMO Style */
+.profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.profile-mini:hover {
+    background: #f0f2f5;
+}
+
+.profile-mini img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #0084ff;
+}
+
+.profile-mini .name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #050505;
+}
+
+.profile-mini .status {
+    font-size: 12px;
+    color: #65676b;
+    font-weight: 400;
+}
+
+.profile-mini .status::before {
+    width: 6px;
+    height: 6px;
+    background: #31a24c;
+    margin-right: 4px;
+}
+
+/* Search Bar - Compact IMO Style */
+.search-wrap {
+    padding: 8px 12px;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+#search {
+    width: 100%;
+    padding: 8px 36px 8px 36px;
+    border: none;
+    background: #f0f2f5;
+    border-radius: 18px;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    color: #050505;
+    position: relative;
+}
+
+#search::placeholder {
+    color: #65676b;
+}
+
+#search:focus {
+    outline: none;
+    background: #e4e6eb;
+}
+
+.search-wrap::before {
+    content: '\f002';
+    /* FontAwesome search icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #65676b;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+/* Sidebar Tabs - Compact IMO Style */
+.sidebar-tabs {
+    display: flex;
+    gap: 3px;
+    padding: 6px 12px;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e6eb;
+}
+
+.sidebar-tabs .tab-button {
+    flex: 1;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #65676b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.sidebar-tabs .tab-button:hover {
+    background: #f0f2f5;
+}
+
+.sidebar-tabs .tab-button.active {
+    background: #e7f3ff;
+    color: #0084ff;
+}
+
+.sidebar-tabs .tab-button i {
+    font-size: 13px;
+}
+
+/* Contact List - IMO Clean Style */
+.contacts {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 8px;
+    background: #ffffff;
+}
+
+.contacts::-webkit-scrollbar {
+    width: 8px;
+}
+
+.contacts::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.contacts::-webkit-scrollbar-thumb {
+    background: #ccd0d5;
+    border-radius: 4px;
+}
+
+.contacts::-webkit-scrollbar-thumb:hover {
+    background: #bcc0c4;
+}
+
+/* Contact Item - Modern IMO Card */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border-radius: 10px;
+    margin-bottom: 2px;
+    border-left: 3px solid transparent;
+    position: relative;
+}
+
+.contact-item:hover {
+    background: #f0f2f5;
+}
+
+.contact-item.active {
+    background: #e7f3ff;
+    border-left-color: #0084ff;
+}
+
+/* Avatar with Status Indicator */
+.contact-item .avatar {
+    position: relative;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.contact-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+/* Online Status Dot - Green Dot Like IMO */
+.contact-item .status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    background: #31a24c;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+}
+
+.contact-item .status-dot.offline {
+    background: #b0b3b8;
+}
+
+/* Contact Meta Info */
+.contact-item .meta {
+    flex: 1;
+    min-width: 0;
+    /* Allow text truncation */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contact-item .peer-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #050505;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Last Message Preview - Gray Subtitle */
+.contact-item .peer-sub {
+    font-size: 13px;
+    color: #65676b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 400;
+}
+
+/* Timestamp - Right Aligned */
+.contact-item .timestamp {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 12px;
+    color: #65676b;
+}
+
+/* Unread Badge - Red Circle Like IMO */
+.contact-item .unread-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #f02849;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Empty State */
+.contacts .empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    color: #65676b;
+    font-size: 14px;
+}
+
+/* New Chat Button - IMO Style */
+#new-chat {
+    background: #0084ff;
+    color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#new-chat:hover {
+    background: #0073e6;
+    transform: scale(1.05);
+}
+
+/* Chat Options Buttons - Compact IMO Style */
+.chat-options {
+    padding: 6px 12px;
+    background: #ffffff;
+    border-bottom: 1px solid #e4e6eb;
+    /* show a compact list area with scrolling when needed */
+    max-height: 120px; /* small height to avoid showing all functions at once */
+    height: auto;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-options .btn {
+    width: 100%;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    transition: all 0.16s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chat-options .btn.primary {
+    background: #e7f3ff;
+    color: #0084ff;
+    border: none;
+}
+
+.chat-options .btn.primary:hover {
+    background: #d8edff;
+}
+
+.chat-options .btn.secondary {
+    background: #f0f2f5;
+    color: #050505;
+    border: none;
+}
+
+/* Hide less-important/secondary actions so the panel remains compact */
+.chat-options .btn.secondary {
+    display: none;
+}
+
+.chat-options .btn.secondary:hover {
+    background: #e4e6eb;
+}
+
+/* Badge for Friend Request Count */
+.chat-options .badge {
+    background: #f02849;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+/* Animation for new items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contact-item {
+    animation: slideIn 0.2s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+}
